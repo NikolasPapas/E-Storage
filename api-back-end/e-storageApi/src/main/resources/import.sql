@@ -1,0 +1,37 @@
+-- https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html
+-- https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html
+-- IN THIS FILE WE CAN WRITE AN SQL SCRIPT CONTAINING:
+-- SCHEMA, TABLE AND DATA MANIPULATION QUERIES
+-- TO BE EXECUTED AUTOMATICALLY DURING THE INITIALIZATION OF THE APPLICATION
+-- AND AFTER THE CREATION OF SCHEMA AND TABLES BY Hibernate
+-- IF spring.jpa.hibernate.ddl-auto IS SET TO create OR create-drop
+-- IT IS A Hibernate feature (nothing to do with Spring)
+
+--INSERT INTO USER (id, firstname, lastname, email, username, password, role) VALUES ('123', 'John', 'Doe', 'john@mail.com', 'johnD', 'pass1234', 'ROLE_USER');'
+--INSERT INTO USER (id, firstname, lastname, email, username, password, role) VALUES ('124', 'Jane', 'Doe', 'jane@mail.com', 'janeD', 'pass1234', 'ROLE_ADMIN');''
+--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   afm,  first_Name, last_Name, address,      email,       pass, vehicle_brand,vehicle_plate, Type
+-- INSERT INTO person ( person_afm, person_first_Name, person_last_Name, person_address, person_email, person_pass, person_vehicle_brand, person_vehicle_plate, personType) VALUES (1234567L,'thomas','Mpitros','Alexandras 21', 'thomas@gmail.com', '12345', 'Opel Zafira','ABC-1234','ADMIN');
+-- INSERT INTO person ( person_afm, person_first_Name, person_last_Name, person_address, person_email, person_pass, person_vehicle_brand, person_vehicle_plate, personType) VALUES (2345671L,'vaggelis','Gianakostian','Ag.Ioanou300', 'vaggelis@gmail.com', '23451', 'Toyota Auris','ABC-2341','USER');
+-- INSERT INTO person ( person_afm, person_first_Name, person_last_Name, person_address, person_email, person_pass, person_vehicle_brand, person_vehicle_plate, personType) VALUES (3456712L,'manos','Starakis','Ymitou 1', 'manos@gmail.com', '34512', 'Toyota Aigo astra','ABC-3412','ADMIN');
+-- INSERT INTO person ( person_afm, person_first_Name, person_last_Name, person_address, person_email, person_pass, person_vehicle_brand, person_vehicle_plate, personType) VALUES (4567123L,'Nikolas','Papazian','L.B.Sofias 317A', 'nikolas@gmail.com', '45123', 'BMW A2','ABC-4123','USER');
+-- INSERT INTO person ( person_afm, person_first_Name, person_last_Name, person_address, person_email, person_pass, person_vehicle_brand, person_vehicle_plate, personType) VALUES (5671234L,'thanasis','Malamas','L.Siggroy 362B', 'thanasis@gmail.com', '51234', 'BMW 1000rr','CBA-1234','ADMIN');
+--
+
+--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////fix_type,   stage,    price,    from_day,    start_day,     end_day,    description, person_id
+-- INSERT INTO repair ( repair_fix_type, repair_stage, repair_price, repair_from_day, repair_start_day, repair_end_day, repair_description, person_id) VALUES ('SMALL', 'IN_PROGRESS', '101.99', '2018-01-01', '2018-01-12', '2018-01-19', 'Takakia', 1L);
+-- INSERT INTO repair ( repair_fix_type, repair_stage, repair_price, repair_from_day, repair_start_day, repair_end_day, repair_description, person_id) VALUES ('BIG', 'IN_QUEUE', '102.99', '2018-12-12', '2018-12-14', '2018-12-25', 'Lastixa', 1L);
+-- INSERT INTO repair ( repair_fix_type, repair_stage, repair_price, repair_from_day, repair_start_day, repair_end_day, repair_description, person_id) VALUES ('SMALL', 'COMPLETED', '103.99', '2018-05-05', '2018-05-15', '2018-05-30', 'Ladia', 2L);
+-- INSERT INTO repair ( repair_fix_type, repair_stage, repair_price, repair_from_day, repair_start_day, repair_end_day, repair_description, person_id) VALUES ('BIG', 'IN_PROGRESS', '104.99', '2018-12-12', '2018-12-13', '2018-12-18', 'Paraflou', 3L);
+-- INSERT INTO repair ( repair_fix_type, repair_stage, repair_price, repair_from_day, repair_start_day, repair_end_day, repair_description, person_id) VALUES ('SMALL', 'IN_QUEUE', '106.99', '2018-12-05', '2018-12-05', '2019-01-08', 'Psigio', 4L);
+-- INSERT INTO repair ( repair_fix_type, repair_stage, repair_price, repair_from_day, repair_start_day, repair_end_day, repair_description, person_id) VALUES ('BIG', 'IN_PROGRESS', '106.99', '2018-12-12', '2019-01-05', '2019-01-15', 'Diskoplato', 4L);
+-- INSERT INTO repair ( repair_fix_type, repair_stage, repair_price, repair_from_day, repair_start_day, repair_end_day, repair_description, person_id) VALUES ('SMALL', 'IN_PROGRESS', '107.99', '2018-12-11', '2018-12-12', '2018-12-19', 'Profilaktira', 3L);
+-- INSERT INTO repair ( repair_fix_type, repair_stage, repair_price, repair_from_day, repair_start_day, repair_end_day, repair_description, person_id) VALUES ('BIG', 'IN_PROGRESS', '108.99', '2018-11-30', '2018-12-01', '2018-12-13', 'Mpouzi', 2L);
+
+-- insert into BOOK(book_id, book_title,publication_year,author_id,book_category) values ('fbe25e54-645f-4ede-829b-d28f3a29b2dc','War and Peace','1867','1','LITERARY_REALISM');
+-- insert into BOOK(book_id, book_title,publication_year,author_id,book_category) values ('a6fe1574-04de-44d6-ae2c-9f43fc2f42f1','The Grapes of Wrath','1939','2','DRAMA');
+-- insert into BOOK(book_id, book_title,publication_year,author_id,book_category) values ('2cfc4209-c32e-4a76-8b38-36b8ce5b3ef5','The Murderess','1903','3','DRAMA');
+-- insert into BOOK(book_id, book_title,publication_year,author_id,book_category) values ('534d9f04-1c29-4b68-91a1-902b75c982b4','Captain Michalis','1950','4','DRAMA');
+-- insert into BOOK(book_id, book_title,publication_year,author_id,book_category) values ('d7e7b6ed-fdae-424e-abc5-1718d82b64b8','Report to Greco','1965','4','DRAMA');
+-- insert into BOOK(book_id, book_title,publication_year,author_id,book_category) values ('23b20325-fc09-43c0-b69b-64c47f73988d','The Last Temptation','1960','4','DRAMA');
+-- insert into BOOK(book_id, book_title,publication_year,author_id,book_category) values ('6d002b7e-f985-477b-8320-b71ad7d7713a','Christ Recrucified','1954','4','DRAMA');
+-- insert into BOOK(book_id, book_title,publication_year,author_id,book_category) values ('ba1ba1f3-bbdc-46a5-b279-3a013a4f5ec7','Princess Isambo','1945','5','DRAMA');
