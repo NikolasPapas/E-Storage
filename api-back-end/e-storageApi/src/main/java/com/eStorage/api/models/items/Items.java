@@ -6,8 +6,6 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -54,8 +52,12 @@ public class Items {
     @Column(name = "Price")
     private Float price;
 
-    @ManyToMany(mappedBy = "Orders")
-    private Set<Orders> orders = new HashSet<>();
+    @ManyToMany
+    @JoinTable(
+            name = "Orders_Items",
+            joinColumns = @JoinColumn(name = "items_id", referencedColumnName="ID"),
+            inverseJoinColumns = @JoinColumn(name = "orders_id", referencedColumnName="ID"))
+    private Set<Orders> orders;
 
 
     public UUID getId() {

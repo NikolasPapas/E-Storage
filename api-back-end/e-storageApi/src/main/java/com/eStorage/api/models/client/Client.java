@@ -1,11 +1,11 @@
 package com.eStorage.api.models.client;
 
+import com.eStorage.api.models.orders.Orders;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -57,8 +57,9 @@ public class Client {
     @Column(name = "PhoneNumber", length = MAX_NAME_LENGTH)
     private int phoneNumber;
 
-    @OneToMany(cascade = {CascadeType.REMOVE, CascadeType.MERGE, CascadeType.REFRESH}, orphanRemoval = true, mappedBy = "ID", targetEntity = Order.class)
-    private List<Order> orders;
+    @OneToMany(cascade = {CascadeType.REMOVE, CascadeType.MERGE, CascadeType.REFRESH},
+            orphanRemoval = true, mappedBy = "client", targetEntity = Orders.class)
+    private List<Orders> orders;
 
 
     public UUID getId() {
@@ -157,11 +158,11 @@ public class Client {
         this.phoneNumber = phoneNumber;
     }
 
-    public List<Order> getOrders() {
+    public List<Orders> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Order> orders) {
+    public void setOrders(List<Orders> orders) {
         this.orders = orders;
     }
 

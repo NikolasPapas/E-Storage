@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -42,11 +40,8 @@ public class Orders {
     @JoinColumn(name = "ClientId", referencedColumnName = "ID", nullable = false)
     private Client client;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "Items_Orders",
-            joinColumns = @JoinColumn(name = "item_id", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "order_Id", referencedColumnName = "ID"))
-    private Set<Items> orderedItems = new HashSet<>();
+    @ManyToMany(mappedBy = "orders")
+    private Set<Items> items;
 
     public UUID getId() {
         return id;
@@ -96,12 +91,12 @@ public class Orders {
         this.client = client;
     }
 
-    public Set<Items> getOrderedItems() {
-        return orderedItems;
+    public Set<Items> getItems() {
+        return items;
     }
 
-    public void setOrderedItems(Set<Items> orderedItems) {
-        this.orderedItems = orderedItems;
+    public void setItems(Set<Items> items) {
+        this.items = items;
     }
 
     @Override
@@ -112,7 +107,6 @@ public class Orders {
                 ", Delivery Date=" + deliveryDate + '\'' +
                 ", User Id= { " + user.toString() + " }" + '\'' +
                 ", Client=" + "{ " + client.toString() + " }" + '\'' +
-                ", Ordered Items= { " + orderedItems.stream().findAny().toString() + " }" + '\'' +
                 '}';
     }
 }

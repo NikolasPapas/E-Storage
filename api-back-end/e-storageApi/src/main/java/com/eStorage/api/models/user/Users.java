@@ -4,10 +4,10 @@ package com.eStorage.api.models.user;
 import com.eStorage.api.models.orders.Orders;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import org.hibernate.criterion.Order;
+
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -45,8 +45,9 @@ public class Users {
     @Column(name = "Role", length = MAX_NAME_LENGTH)
     private EnumUserRole role;
 
-    @OneToMany(cascade = {CascadeType.REMOVE, CascadeType.MERGE, CascadeType.REFRESH}, orphanRemoval = true, mappedBy = "ID", targetEntity = Order.class)
-    private List<Orders> orders;
+    @OneToMany(cascade = {CascadeType.REMOVE, CascadeType.MERGE, CascadeType.REFRESH},
+            orphanRemoval = true, mappedBy = "user", targetEntity = Orders.class)
+    private Set<Orders> orders;
 
     public UUID getId() {
         return id;
@@ -112,11 +113,11 @@ public class Users {
         this.status = status;
     }
 
-    public List<Orders> getOrders() {
+    public Set<Orders> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Orders> orders) {
+    public void setOrders(Set<Orders> orders) {
         this.orders = orders;
     }
 
