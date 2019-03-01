@@ -1,4 +1,4 @@
-package com.eStorage.api.models.user;
+package com.eStorage.api.entitys.user;
 
 public enum EnumUserRole {
     USER("User"),

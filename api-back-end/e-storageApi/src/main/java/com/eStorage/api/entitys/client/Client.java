@@ -1,9 +1,8 @@
-package com.eStorage.api.models.client;
+package com.eStorage.api.entitys.client;
 
-import com.eStorage.api.models.orders.Orders;
+import com.eStorage.api.entitys.orders.Orders;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
 import java.util.List;

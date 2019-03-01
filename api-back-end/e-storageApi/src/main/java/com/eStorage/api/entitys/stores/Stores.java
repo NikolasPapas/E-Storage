@@ -1,4 +1,4 @@
-package com.eStorage.api.models.stores;
+package com.eStorage.api.entitys.stores;
 
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;

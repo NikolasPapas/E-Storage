@@ -1,6 +1,6 @@
-package com.eStorage.api.models.items;
+package com.eStorage.api.entitys.items;
 
-import com.eStorage.api.models.orders.Orders;
+import com.eStorage.api.entitys.orders.Orders;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
