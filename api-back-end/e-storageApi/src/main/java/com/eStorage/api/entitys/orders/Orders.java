@@ -1,6 +1,6 @@
 package com.eStorage.api.entitys.orders;
 
-import com.eStorage.api.entitys.client.Client;
+import com.eStorage.api.entitys.client.Clients;
 import com.eStorage.api.entitys.items.Items;
 import com.eStorage.api.entitys.user.Users;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -38,7 +38,7 @@ public class Orders {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "ClientId", referencedColumnName = "ID", nullable = false)
-    private Client client;
+    private Clients client;
 
     @ManyToMany(mappedBy = "orders")
     private Set<Items> items;
@@ -83,11 +83,11 @@ public class Orders {
         this.user = user;
     }
 
-    public Client getClient() {
+    public Clients getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(Clients client) {
         this.client = client;
     }
 
@@ -101,12 +101,12 @@ public class Orders {
 
     @Override
     public String toString() {
-        return "Client{" + "id=" + id + '\'' +
+        return "client{" + "id=" + id + '\'' +
                 ", Status='" + status + '\'' +
                 ", Order Date=" + orderDate + '\'' +
                 ", Delivery Date=" + deliveryDate + '\'' +
                 ", User Id= { " + user.toString() + " }" + '\'' +
-                ", Client=" + "{ " + client.toString() + " }" + '\'' +
+                ", client=" + "{ " + client.toString() + " }" + '\'' +
                 '}';
     }
 }

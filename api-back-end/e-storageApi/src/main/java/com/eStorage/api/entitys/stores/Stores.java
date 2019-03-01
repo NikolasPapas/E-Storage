@@ -96,7 +96,7 @@ public class Stores {
 
     @Override
     public String toString() {
-        return "Client{" + "id=" + id + '\'' +
+        return "client{" + "id=" + id + '\'' +
                 ", Name='" + name + '\'' +
                 ", City=" + city + '\'' +
                 ", Postal Code=" + postalCode + '\'' +

@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Client")
+@Table(name = "client")
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "ID")
-public class Client {
+public class Clients {
     private static final int MAX_NAME_LENGTH = 60;
 
     @Id
@@ -167,7 +167,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" + "id=" + id + '\'' +
+        return "client{" + "id=" + id + '\'' +
                 ", Name='" + name + '\'' +
                 ", Brand=" + brand + '\'' +
                 ", Occupation=" + occupation + '\'' +

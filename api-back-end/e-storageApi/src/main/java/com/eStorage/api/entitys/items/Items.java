@@ -158,7 +158,7 @@ public class Items {
 
     @Override
     public String toString() {
-        return "Client{" + "id=" + id + '\'' +
+        return "client{" + "id=" + id + '\'' +
                 ", Status='" + status + '\'' +
                 ", Name='" + name + '\'' +
                 ", Category='" + category + '\'' +
