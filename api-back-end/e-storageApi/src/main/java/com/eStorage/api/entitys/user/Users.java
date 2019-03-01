@@ -42,6 +42,7 @@ public class Users {
     @Column(name = "Password", length = MAX_NAME_LENGTH)
     private String password;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "Role", length = MAX_NAME_LENGTH)
     private EnumUserRole role;
 
